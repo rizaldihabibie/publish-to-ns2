@@ -60,3 +60,13 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
+      - name: Copy jar to remote scp
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASS }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ssh -N -L 9010:TBRBT02:22 trbt@localhost -p 1112 &
+            
