@@ -71,4 +71,4 @@ jobs:
             ssh -N -L 9010:TBRBT02:22 trbt@localhost -p 1112 &
             ls -lh hbb
             scp -P 9010 hbb/general-0.0.1-SNAPSHOT.jar trbt@localhost:/TRBT/hbb/general-0.0.1-SNAPSHOT.jar
-            fuser -k 8080/tcp
+            fuser -k 9010/tcp
