@@ -60,16 +60,3 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
-      - name: Copy jar to remote scp
-        uses: appleboy/ssh-action@master
-        with: 
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASS }}
-          port: ${{ secrets.PORT }}
-          proxy_host: ${{ secrets.HOST_JUMP }}
-          proxy_username: ${{ secrets.USERNAME_JUMP }}
-          proxy_password: ${{ secrets.PASS_JUMP }}
-          proxy_port: ${{ secrets.PORT_JUMP }}
-          script: |
-            ls -lh hbb
