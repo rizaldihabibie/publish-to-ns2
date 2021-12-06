@@ -67,8 +67,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
+          proxy_host: ${{ secrets.HOST_JUMP }}
+          proxy_username: ${{ secrets.USERNAME_JUMP }}
+          proxy_password: ${{ secrets.PASS_JUMP }}
+          proxy_port: ${{ secrets.PORT_JUMP }}
           script: |
-            ssh -N -L 9010:TBRBT02:22 trbt@localhost -p 1112 &
             ls -lh hbb
-            scp -P 9010 hbb/general-0.0.1-SNAPSHOT.jar trbt@localhost:/TRBT/hbb/general-0.0.1-SNAPSHOT.jar
-            fuser -k 9010/tcp
