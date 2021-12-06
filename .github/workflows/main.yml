@@ -59,4 +59,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASS }}
-          port: ${{ secrets.PORT }}
+          port: ${{ secrets.PORT}}
